@@ -1,0 +1,524 @@
+
+/* Map of USA */
+#map {
+    width:700px;
+    margin:auto;
+    position:absolute;
+    top:10%;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:4;
+    display:none; /* use this to control visibility in JavaScript */
+}
+
+/* video */
+#iframevid {
+    width:330px;
+    height:230px;
+    position:absolute;
+    top:10%;
+    left:15%;
+    right:0;
+    z-index:5;
+    border:10px solid rgba(255,100,255,0.1);
+    border-radius:20px;
+}
+/* Size of colonies */
+#colonies img {
+    width:70px;
+}
+
+/* Georgia */
+#GA img{
+    position:absolute;
+    top:40%;
+    left:75%;
+    z-index:1;
+}
+
+.tooltip_GA {
+    width:120px;
+    position:absolute;
+    z-index:3;
+    bottom:59%;
+    left:65%;
+    opacity:0;
+}
+
+#GA .tooltip_GA::after {
+    content:"";
+    position:absolute;
+    top:90%;
+    left:80%;
+    margin-left:-10px;
+    border-width:7px;
+    border-style: solid;
+    border-color:#FFF transparent transparent transparent;
+}
+
+#GA:hover img{
+    filter: brightness(70%);
+}
+
+#GA:hover .tooltip_GA{
+    opacity:1;
+}
+
+/* South Carolina */
+#SC img{
+    position:absolute;
+    top:37%;
+    left:79%;
+}
+
+.tooltip_SC {
+    width:120px;
+    position:absolute;
+    z-index:2;
+    bottom:52%;
+    left:80%;
+    opacity:0;
+}
+
+#SC .tooltip_SC::after {
+    content:"";
+    position:absolute;
+    top:-13px;
+    left:30%;
+    margin-left:-10px;
+    border-width:7px;
+    border-style: solid;
+    border-color:#FFF transparent transparent transparent;
+    transform:rotateZ(180deg);
+}
+
+#SC:hover img{
+    filter: brightness(70%);
+}
+
+#SC:hover .tooltip_SC{
+    opacity:1;
+}
+
+/* North Carolina */
+#NC {
+    width:100px;
+    position:absolute;
+    top:33%;
+    left:79%;
+}
+.tooltip_NC {
+    width:120px;
+    position:absolute;
+    z-index:3;
+    bottom:67%;
+    left:67%;
+    opacity:0;
+}
+
+#NC .tooltip_NC::after {
+    content:"";
+    position:absolute;
+    top:90%;
+    left:10%;
+    margin-left:-10px;
+    border-width:7px;
+    border-style: solid;
+    border-color:#FFF transparent transparent transparent;
+}
+
+#NC:hover img{
+    filter: brightness(70%);
+}
+
+#NC:hover .tooltip_NC{
+    opacity:1;
+}
+
+/* Virginia */
+#VG img{
+    position: absolute;
+    top:28%;
+    left:80%;
+    z-index: 1;
+}
+
+.tooltip_VG {
+    width:120px;
+    position:absolute;
+    z-index:3;
+    bottom:67%;
+    left:67%;
+    opacity:0;
+}
+
+#VG .tooltip_VG::after {
+    content:"";
+    position:absolute;
+    top:100%;
+    left:90%;
+    margin-left:-10px;
+    border-width:7px;
+    border-style: solid;
+    border-color:#FFF transparent transparent transparent;
+}
+
+#VG:hover img{
+    filter: brightness(70%);
+}
+
+#VG:hover .tooltip_VG{
+    opacity:1;
+}
+
+/* Pennsylvania */
+#PV img{
+    position:absolute;
+    top:20.5%;
+    left:80%;
+    z-index:3;
+}
+
+.tooltip_PV {
+    width:120px;
+    position:absolute;
+    z-index:3;
+    bottom:77%;
+    left:75%;
+    opacity:0;
+}
+
+#PV .tooltip_PV::after {
+    content:"";
+    position:absolute;
+    top:100%;
+    left:50%;
+    margin-left:-15px;
+    border-width:7px;
+    border-style: solid;
+    border-color:#FFF transparent transparent transparent;
+}
+
+#PV:hover img{
+    filter: brightness(70%);
+}
+
+#PV:hover .tooltip_PV{
+    opacity:1;
+}
+/* Maryland */
+#ML img{
+    position:absolute;
+    top:25%;
+    left:80%;
+    z-index:2;
+}
+.tooltip_ML {
+    width:120px;
+    position:absolute;
+    z-index:4;
+    bottom:75%;
+    left:80%;
+    opacity:0;
+}
+
+#ML .tooltip_ML::after {
+    content:"";
+    position:absolute;
+    top:100%;
+    left:50%;
+    margin-left:-15px;
+    border-width:7px;
+    border-style: solid;
+    border-color:#FFF transparent transparent transparent;
+}
+
+#ML:hover img{
+    filter: brightness(70%);
+}
+
+#ML:hover .tooltip_ML{
+    opacity:1;
+}
+
+/* Delaware */
+#DW img {
+    position:absolute;
+    top:27%;
+    left:87%;
+    transform: scale(0.5);
+}
+
+.tooltip_DW {
+    width:120px;
+    position:absolute;
+    z-index:2;
+    bottom:65%;
+    left:85%;
+    opacity:0;
+}
+
+#DW .tooltip_DW::after {
+    content:"";
+    position:absolute;
+    top:100%;
+    left:50%;
+    margin-left:-15px;
+    border-width:7px;
+    border-style: solid;
+    border-color:#FFF transparent transparent transparent;
+}
+
+#DW:hover img{
+    filter: brightness(70%);
+}
+
+#DW:hover .tooltip_DW{
+    opacity:1;
+}
+
+/* New Jersey */
+#NJ img{
+    position:absolute;
+    top:23%;
+    left:82%;
+}
+.tooltip_NJ {
+    width:120px;
+    position:absolute;
+    z-index:2;
+    bottom:75%;
+    left:90%;
+    opacity:0;
+}
+
+#NJ .tooltip_NJ::after {
+    content:"";
+    position:absolute;
+    top:90%;
+    left:45%;
+    margin-left:-55px;
+    border-width:7px;
+    border-style: solid;
+    border-color:#FFF transparent transparent transparent;
+}
+
+#NJ:hover img{
+    filter: brightness(70%);
+}
+
+#NJ:hover .tooltip_NJ{
+    opacity:1;
+}
+/* New York */
+#NY img{
+    position: absolute;
+    top:14.5%;
+    left:81%;
+    transform: scale(2);
+    z-index:1;
+}
+
+.tooltip_NY {
+    width:120px;
+    position:absolute;
+    z-index:2;
+    bottom:85%;
+    left:80%;
+    opacity:0;
+}
+
+#NY .tooltip_NY::after {
+    content:"";
+    position:absolute;
+    top:100%;
+    left:50%;
+    margin-left:-15px;
+    border-width:7px;
+    border-style: solid;
+    border-color:#FFF transparent transparent transparent;
+}
+
+#NY:hover img{
+    filter: brightness(70%);
+}
+
+#NY:hover .tooltip_NY{
+    opacity:1;
+}
+
+/* Connecticut */
+#CN img{
+    position:absolute;
+    top:14%;
+    right:5%;
+    z-index:1;
+}
+
+.tooltip_CN {
+    width:120px;
+    position:absolute;
+    z-index:2;
+    bottom:84%;
+    left:83%;
+    opacity:0;
+}
+
+#CN .tooltip_CN::after {
+    content:"";
+    position:absolute;
+    top:100%;
+    left:50%;
+    margin-left:-15px;
+    border-width:7px;
+    border-style: solid;
+    border-color:#FFF transparent transparent transparent;
+}
+
+#CN:hover img{
+    filter: brightness(70%);
+}
+
+#CN:hover .tooltip_CN{
+    opacity:1;
+}
+
+/* Rhode Island */
+#RI img{
+    position:absolute;
+    top:16%;
+    right:4%;
+    z-index:1;
+    transform:scale(1);
+}
+
+.tooltip_RI {
+    width:120px;
+    position:absolute;
+    z-index:2;
+    bottom:82%;
+    left:85%;
+    opacity:0;
+}
+
+#RI .tooltip_RI::after {
+    content:"";
+    position:absolute;
+    top:100%;
+    left:50%;
+    margin-left:-15px;
+    border-width:7px;
+    border-style: solid;
+    border-color:#FFF transparent transparent transparent;
+}
+
+#RI:hover img{
+    filter: brightness(70%);
+}
+
+#RI:hover .tooltip_RI{
+    opacity:1;
+}
+
+/* Massachusetts */
+#MS img{
+    position: absolute;
+    top:13%;
+    right:2%;
+    z-index:1;
+    transform: scale(1.3);
+}
+
+.tooltip_MS {
+    width:120px;
+    position:absolute;
+    z-index:2;
+    bottom:85%;
+    left:90%;
+    opacity:0;
+}
+
+#MS .tooltip_MS::after {
+    content:"";
+    position:absolute;
+    top:100%;
+    left:50%;
+    margin-left:-15px;
+    border-width:7px;
+    border-style: solid;
+    border-color:#FFF transparent transparent transparent;
+}
+
+#MS:hover img{
+    filter: brightness(50%);
+}
+
+#MS:hover .tooltip_MS{
+    opacity:1;
+}
+
+/* New Hampshire */
+#HS img {
+    position: absolute;
+    top:7%;
+    right:3%;
+    height:70px;
+}
+
+.tooltip_HS {
+    width:120px;
+    position:absolute;
+    z-index: 2;
+    bottom:92%;
+    left:85%;
+}
+
+#HS .tooltip_HS::after {
+    content:"";
+    position:absolute;
+    top:100%;
+    left:50%;
+    margin-left:-5px;
+    border-width:7px;
+    border-style: solid;
+    border-color:#FFF transparent transparent transparent;
+}
+
+#HS:hover img{
+    filter: brightness(70%);
+}
+
+#HS:hover .tooltip_HS{
+    opacity:1;
+}
+
+/* Universal Tooltip */
+[class*="tooltip"] {
+    background-color:#FFF;
+    color:#333;
+    text-align: center;
+    border-radius:10px;
+    padding:5px;
+    opacity:0;
+    transition:opacity 0.3;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* To turn the map off  */
+#off {
+    width:70px;
+    position:absolute;
+    top:1%;
+    left:80%;
+    z-index:1;
+    transform-origin: top;
+    -webkit-transform:translateX(30deg);
+    -moz-transform:translateX(30deg);
+    transform:translateX(30deg);
+}
+
+#off:hover img{
+    -webkit-filter:brightness(100%);
+    filter:brightness(50%);
+}

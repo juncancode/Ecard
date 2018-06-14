@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Independence Day Ecard</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="index.css" type="text/css" rel="stylesheet">
+        <link href="map.css" type="text/css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="intro">
+            <button id="title">Explore Independence Day Facts</button>
+        </div>    
+        <div id="entire_container">
+            <div id="sky">
+                <img name="sky_n" src="SVG/sky.svg" alt="sky">
+            </div>
+
+    <!-- Audio Controls -->
+
+            <div id="audioplay_container" onclick="playAudio()">
+            <audio id="audiobutton"></audio>
+            </div> 
+
+            <div id="audiomute_container" onclick="muteAudio()">
+            <audio id="mutebutton"></audio>
+            </div>
+
+            <div id="clouds">
+                <img src="SVG/cloud1.svg" alt="cloud1" id="cloud1">
+                <img src="SVG/cloud2.svg" alt="cloud2" id="cloud2">
+                <img src="SVG/cloud3.svg" alt="cloud3" id="cloud3">
+            </div>
+            
+            <audio controls loop id="firework" style="visibility:hidden"></audio>
+            <div id="monument">
+                <svg id="monument" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76.72 367.2"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#c4c4c5;}.cls-3{fill:#a7a7aa;}.cls-4{fill:#e1e1e2;}.cls-5{fill:#fff8f1;}.cls-6{fill:#b2a69b;}.cls-7{fill:#feeddc;}</style></defs><title>monument_G</title><path class="cls-1" d="M38.1,0"/><polyline class="cls-2" points="38.09 17.99 38.09 0 22.75 24.87"/><polyline class="cls-3" points="22.75 24.87 0 367.2 31.75 367.2 38.09 17.99"/><polyline class="cls-4" points="37.78 17.98 38.09 0 54.5 20.64"/><polyline class="cls-5" points="37.78 17.98 31.75 367.2 76.72 367.2 54.5 20.64"/><path class="cls-6" d="M22.75,24.87,8.39,241c11.31-7.73,25.84-17.18,25.84-17.18l.12.05L38.1,18Z"/><polygon class="cls-7" points="34.23 223.82 68.46 238.43 54.5 20.64 37.78 17.98 34.23 223.82 34.23 223.82"/></svg>
+            </div> 
+
+            <div id="ground">
+                <img src="SVG/ground.svg" alt="ground">
+            </div>
+
+    <!--    Presidents    -->
+            <audio id="halo"></audio>
+            <div id="halos"></div>
+            <div id="Jadams">
+                <img src="SVG/JAdams.svg" alt="president">
+            </div>
+            <div id="halos2"></div>
+            <div id="Tjefferson">
+                <img src="SVG/TJefferson.svg" alt="president">
+            </div>
+            <div id="halos3"></div>
+            <div id="Jmornoe">
+                <img src="SVG/JMornoe.svg" alt="president">
+            </div>
+
+    <!--    USA Flags   -->
+
+            <div id="flag1">
+                <img src="SVG/flag1.svg" alt="flag">
+                <span class="tooltip_flag1">Fact No.1!</span>
+            </div>
+            <div id="flag2">
+                <img src="SVG/flag2.svg" alt="flag">
+                <span class="tooltip_flag2">Fact No.2!</span>
+            </div>
+            <div id="flag3">
+                <img src="SVG/flag3.svg" alt="flag">
+                <span class="tooltip_flag3">Fact No.3!</span>
+            </div>
+            <div id="flag4">
+                <img src="SVG/flag4.svg" alt="flag">
+                <span class="tooltip_flag4">Fact No.4!</span>
+            </div>
+            <div id="flag5">
+                <img src="SVG/flag5.svg" alt="flag">
+                <span class="tooltip_flag5">Fact No.5!</span>
+            </div>
+
+    <!-- Malia Obama -->
+            <audio id="bd"></audio>
+            <div id="malia">
+                <img src="SVG/malia.svg" alt="malia">
+            </div>
+
+    <!--  England Flag  -->
+            <audio id="fall"></audio>
+            <div id="british">
+                <img src="SVG/britishstick.svg" alt="British Signboard">
+            </div>
+
+    <!-- Hotdog -->
+
+            <div id="hotdog" class="">
+                <img src="SVG/hotdog2.svg" alt="hotdog">
+            </div>
+            <div id="everywhere"></div>
+            <div id="wrapper">
+                <img src="SVG/paper.svg" alt="wrapper">
+            </div>
+
+            <!-- Betsy Ross -->
+            <div id="betsy">
+                <img src="SVG/batsyross.svg" alt="Betsy Ross">
+            </div>
+
+            <!--  Calendar    -->
+            <div id="calendar">
+                <img src="SVG/calendar.svg" alt="calendar">
+            </div>
+
+            <!--  Map of USA
+    13 colonies: New Hampshire, Massachusetts Bay, Rhode Island, Connecticut, New York, New Jersey, Pennsylvania, Delaware, Maryland, Virginia, North Carolina, South Carolina, and Georgia.       
+    -->
+            <div id="map">
+                <img src="SVG/map.svg" alt="USA map">
+                <div id=colonies>
+                    <div id="HS">
+                        <img src="SVG/New%20Hampshire.svg" alt="colony">
+                        <span class="tooltip_HS">New Hampshire</span>
+                    </div>
+                    <div id="MS">
+                        <img src="SVG/Massachusetts.svg" alt="colony">
+                        <span class="tooltip_MS">Massachusetts</span>
+                    </div>    
+                    <div id="RI">
+                        <img src="SVG/Rhode%20Island.svg" alt="colony">
+                        <span class="tooltip_RI">Rhode Island</span>
+                    </div>
+                    <div id="CN">
+                        <img src="SVG/connecticut.svg" alt="colony">
+                        <span class="tooltip_CN">Connecticut</span>
+                    </div>
+                    <div id="NY">
+                        <img src="SVG/New%20York.svg" alt="colony">
+                        <span class="tooltip_NY">New York</span>
+                    </div>
+                    <div id="NJ">
+                        <img src="SVG/New%20Jersey.svg" alt="colony">
+                        <span class="tooltip_NJ">New Jersey</span>
+                    </div>    
+                    <div id="DW">
+                        <img src="SVG/Delaware.svg" alt="colony">
+                        <span class="tooltip_DW">Delaware</span>
+                    </div>    
+                    <div id="ML">
+                        <img src="SVG/Maryland.svg" alt="colony">
+                        <span class="tooltip_ML">Maryland</span>
+                    </div>    
+                    <div id="PV">
+                        <img id="PV" src="SVG/Pennsylvania.svg" alt="colony">
+                        <span class="tooltip_PV">Pennsylvania</span>
+                    </div>
+                    <div id="VG">
+                        <img id="VG" src="SVG/Virginia.svg" alt="colony">
+                        <span class="tooltip_VG">Virginia</span>
+                    </div>    
+                    <div id="NC">
+                        <img src="SVG/North%20Carolina.svg" alt="colony">
+                        <span class="tooltip_NC">North Carolina</span>
+                    </div>    
+                    <div id="SC">
+                        <img src="SVG/South%20Carolina.svg" alt="colony">
+                        <span class="tooltip_SC">South Carolina</span>
+                    </div>    
+                    <div id="GA">
+                          <img id="GA" src="SVG/Georgia.svg" alt="colony">
+                          <span class="tooltip_GA">Georgia</span>
+                    </div>
+                </div>    
+                <iframe id="iframevid" class="youtube-video" src="https://www.youtube.com/embed/BkRHizp13Is" frameborder="0" allowfullscreen></iframe>
+                <div id="off">
+                    <img src="SVG/X.svg" alt="exit">
+                </div>
+            </div>
+            <!-- Fact Box -->
+            <div id="factbox">
+            </div>
+            <img src="SVG/scroll.svg" alt="scroll" id="scroll">
+
+            <script src="index.js"></script>
+        </div>    
+    </body>
+</html>
