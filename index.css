@@ -9,6 +9,7 @@ body {
     margin:0;
     padding:0;
 }
+
 /* Intro */
 
 #intro {
@@ -525,12 +526,27 @@ body {
 
 /* Besty Ross */
 #betsy {
-    width:200px;
+    width:155px;
+    height:200px;
     position:absolute;
     top:65%;
     right:10%;
-    z-index:2;
-    cursor: pointer;    
+    z-index:3;
+    cursor: pointer;   
+    background-image:url(/SVG/BESTYROSS.svg);
+    background-repeat: no-repeat;
+    background-size:1180px 200px;
+    animation: flag 0.9s steps(8) infinite;
+    transform:scale(1.5);
+}
+
+@keyframes flag {
+    from {
+     background-position:0px;   
+    }
+    to {
+     background-position:-1165px;
+    }
 }
 
 /* Calendar */
