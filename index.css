@@ -1,593 +1,768 @@
-/* Make the clouds loop */
-
-@import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption'); /* Title button */
-@import url('https://fonts.googleapis.com/css?family=Roboto:700'); /* 13 colonies */
-@import url('https://fonts.googleapis.com/css?family=Philosopher'); /* Facts */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:700'); /* 5 Flags */
+@import url("https://fonts.googleapis.com/css?family=PT+Sans+Caption"); /* Title button */
+@import url("https://fonts.googleapis.com/css?family=Roboto:700"); /* 13 colonies */
+@import url("https://fonts.googleapis.com/css?family=Philosopher"); /* Facts */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:700"); /* 5 Flags */
 
 body {
-    margin:0;
-    padding:0;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Intro */
 
 #intro {
-    background-image: url(SVG/Intro.svg);
-    background-size: cover;
-    position:fixed;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-    margin:auto;
-    z-index:9;
-    transition:3s;
-    animation-timing-function:ease-in-out;
+  background-image: url(SVG/Intro.svg);
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 9;
+  -webkit-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
 }
 
 /* Title Button */
 #title {
-    width:570px;
-    height:100px;
-    background-color:rgba(175,10,10,0.9);
-    color:#FFF;
-    position:absolute;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-    margin:auto;
-    justify-content: center;
-    align-content: center;
-    border:3px solid #ddd;
-    z-index:3;
-    font-family: 'PT Sans Caption', sans-serif;
-    font-weight:bold;
-    font-size:2rem;
-    cursor:pointer;
-    transition: 0.5s;
-    z-index:10;
+  width: 570px;
+  height: 100px;
+  background-color: rgba(175, 10, 10, 0.9);
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  border: 3px solid #ddd;
+  z-index: 3;
+  font-family: "PT Sans Caption", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 10;
 }
 
 #entire_container {
-    position:absolute;
-    top:0;
-    right:0;
-    left:0;
-    bottom:0;
-    justify-content: center;
-    text-align: center;
-    margin:auto;
-    width:1366px;
-    height:768px;
-    border:3px dotted transparent;
-    border-image: url(SVG/Intro.svg)round 50;
-    overflow:hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  width: 1366px;
+  height: 768px;
+  border: 3px dotted transparent;
+  -webkit-border-image: url(SVG/Intro.svg) round 50;
+  -o-border-image: url(SVG/Intro.svg) round 50;
+  border-image: url(SVG/Intro.svg) round 50;
+  overflow: hidden;
 }
 
 /* AUDIO */
 #audioplay_container {
-    background-image: url(SVG/speaker.svg);
-    width:60px;
-    height:60px;
-    position:absolute;
-    top:30px;
-    left:50px;
-    cursor:pointer;
-    display:none;
-    filter: brightness(70%);
+  background-image: url(SVG/speaker.svg);
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  cursor: pointer;
+  display: none;
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
 }
 
 #audiomute_container {
-    background-image: url(SVG/mute.svg);
-    width:60px;
-    height:60px;
-    position:absolute;
-    top:30px;
-    left:50px;
-    cursor:pointer;
-    display:block;
-    filter: brightness(70%);
+  background-image: url(SVG/mute.svg);
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  cursor: pointer;
+  display: block;
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
 }
 
 /* Background */
 #sky {
-    width:1366px;
-    height:800px;
-    position:absolute;
-    top:-10px;
-    right:0;
-    bottom:0;
-    left:0;
-    margin:auto;
-    z-index: -2;
+  width: 1366px;
+  height: 800px;
+  position: absolute;
+  top: -10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: -2;
 }
 
 /* Fireworks animation */
+@-webkit-keyframes fireStart {
+  0% {
+    bottom: 0%;
+  }
+  100% {
+    bottom: 100%;
+  }
+}
 @keyframes fireStart {
-    0% {bottom:0%};
-    100% {bottom:100%};
+  0% {
+    bottom: 0%;
+  }
+  100% {
+    bottom: 100%;
+  }
+}
+@-webkit-keyframes fireEnd {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes fireEnd {
-    0% {opacity:0; 
-    };
-    90% {opacity:0.2;
-    };
-    100% {opacity:1;
-    };
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*  Clouds  */
 #clouds {
-    width:100%;
-    z-index: 1;
+  width: 100%;
+  z-index: 1;
+}
+
+@-webkit-keyframes cloudAni_one {
+  0% {
+    right: -300px;
+  }
+  100% {
+    right: 100%;
+  }
 }
 
 @keyframes cloudAni_one {
-    0% {right:-300px;}
-    100% {right:100%;}
+  0% {
+    right: -300px;
+  }
+  100% {
+    right: 100%;
+  }
 }
 
 #cloud1 {
-    width:300px;
-    position:absolute;
-    top:0;
-    right:7%;
-    top:10%;
-    -webkit-animation: cloudAni_one 35s linear 2s infinite; 
-    animation: cloudAni_one 27s linear 2s infinite; 
+  width: 300px;
+  position: absolute;
+  top: 0;
+  right: 7%;
+  top: 10%;
+  -webkit-animation: cloudAni_one 35s linear 2s infinite;
+  animation: cloudAni_one 27s linear 2s infinite;
+}
+
+@-webkit-keyframes cloudAni_two {
+  0% {
+    right: -700px;
+  }
+  100% {
+    right: 100%;
+  }
 }
 
 @keyframes cloudAni_two {
-    0% {right:-700px;}
-    100% {right:100%;}
+  0% {
+    right: -700px;
+  }
+  100% {
+    right: 100%;
+  }
 }
 
 #cloud2 {
-    width:200px;
-    position:absolute;
-    right:40%;
-    top:5%;
-    -webkit-animation: cloudAni_two 43s linear 0.7s infinite;
-    animation: cloudAni_two 43s linear 0.7s infinite;
+  width: 200px;
+  position: absolute;
+  right: 40%;
+  top: 5%;
+  -webkit-animation: cloudAni_two 43s linear 0.7s infinite;
+  animation: cloudAni_two 43s linear 0.7s infinite;
+}
+
+@-webkit-keyframes cloudAni_three {
+  0% {
+    right: -500px;
+  }
+  100% {
+    right: 100%;
+  }
 }
 
 @keyframes cloudAni_three {
-    0% {right:-500px;}
-    100% {right:100%;}
+  0% {
+    right: -500px;
+  }
+  100% {
+    right: 100%;
+  }
 }
 
 #cloud3 {
-    width:200px;
-    position:absolute;
-    top:15%;
-    right:3%;
-    z-index:1;
-    -webkit-animation: cloudAni_three 33s linear 1s infinite;
-    animation: cloudAni_three 33s linear 1s infinite;
+  width: 200px;
+  position: absolute;
+  top: 15%;
+  right: 3%;
+  z-index: 1;
+  -webkit-animation: cloudAni_three 33s linear 1s infinite;
+  animation: cloudAni_three 33s linear 1s infinite;
 }
 /* Monument + Ground */
 #monument {
-    width:120px;
-    position:absolute;
-    right:30%;
-    top:3%;
-    transition:1s ease;
+  width: 120px;
+  position: absolute;
+  right: 30%;
+  top: 3%;
+  -webkit-transition: 1s ease;
+  -o-transition: 1s ease;
+  transition: 1s ease;
 }
 
 #ground {
-    width:1366px;
-    height:768px;
-    position:absolute;
-    margin:auto;
-    top:825px;
-    bottom:0;
-    left:0;
-    right:0;
-    z-index:2;
+  width: 1366px;
+  height: 768px;
+  position: absolute;
+  margin: auto;
+  top: 825px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
 }
 
 /* Presidents */
-@keyframes halo{
-    0% {bottom:220px;}
-    50% {bottom:210px;}
-    100% {bottom:220px;}
+@-webkit-keyframes halo {
+  0% {
+    bottom: 220px;
+  }
+  50% {
+    bottom: 210px;
+  }
+  100% {
+    bottom: 220px;
+  }
+}
+@keyframes halo {
+  0% {
+    bottom: 220px;
+  }
+  50% {
+    bottom: 210px;
+  }
+  100% {
+    bottom: 220px;
+  }
 }
 
 #halos {
-    width:250px;
-    position:absolute;
-    top:65%;
-    left:15%;
-    z-index:1;
+  width: 250px;
+  position: absolute;
+  top: 65%;
+  left: 15%;
+  z-index: 1;
 }
 
-@keyframes JA{
-    0%{top:38%;}
-    50%{top:40%;}
-    100%{top:38%;}
+@-webkit-keyframes JA {
+  0% {
+    top: 38%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 38%;
+  }
+}
+
+@keyframes JA {
+  0% {
+    top: 38%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 38%;
+  }
 }
 
 #Jadams {
-    cursor: pointer;
-    width:250px;
-    position:absolute;
-    top:38%;
-    left:15%;
-    z-index:0;
-    animation:JA 3s step-end 1s infinite;
-    -webkit-animation:JA 3s step-end 1s infinite;
+  cursor: pointer;
+  width: 250px;
+  position: absolute;
+  top: 38%;
+  left: 15%;
+  z-index: 0;
+  animation: JA 3s step-end 1s infinite;
+  -webkit-animation: JA 3s step-end 1s infinite;
 }
 
 #halos2 {
-    width:250px;
-    position:absolute;
-    top:60%;
-    left:24%;
-    z-index: 1;
+  width: 250px;
+  position: absolute;
+  top: 60%;
+  left: 24%;
+  z-index: 1;
 }
 
-@keyframes TJ{
-    0%{top:33%;}
-    50%{top:35%;}
-    100%{top:33%;}
+@-webkit-keyframes TJ {
+  0% {
+    top: 33%;
+  }
+  50% {
+    top: 35%;
+  }
+  100% {
+    top: 33%;
+  }
 }
 
+@keyframes TJ {
+  0% {
+    top: 33%;
+  }
+  50% {
+    top: 35%;
+  }
+  100% {
+    top: 33%;
+  }
+}
 
 #Tjefferson {
-    cursor: pointer;
-    width:250px;
-    position:absolute;
-    top:33%;
-    left:28%;
-    z-index:0;
-    animation:TJ 3s step-start 2s infinite;    
-    -webkit-animation:TJ 3s step-start 2s infinite;        
+  cursor: pointer;
+  width: 250px;
+  position: absolute;
+  top: 33%;
+  left: 28%;
+  z-index: 0;
+  animation: TJ 3s step-start 2s infinite;
+  -webkit-animation: TJ 3s step-start 2s infinite;
 }
 
 #halos3 {
-    width:250px;
-    position:absolute;
-    top:60%;
-    left:39%;
-    z-index: 1;
+  width: 250px;
+  position: absolute;
+  top: 60%;
+  left: 39%;
+  z-index: 1;
 }
 
-@keyframes JM{
-    0%{top:35%;}
-    50%{top:38%;}
-    100%{top:35%;}
+@-webkit-keyframes JM {
+  0% {
+    top: 35%;
+  }
+  50% {
+    top: 38%;
+  }
+  100% {
+    top: 35%;
+  }
+}
+
+@keyframes JM {
+  0% {
+    top: 35%;
+  }
+  50% {
+    top: 38%;
+  }
+  100% {
+    top: 35%;
+  }
 }
 
 #Jmornoe {
-    cursor:pointer;
-    width:170px;
-    position: absolute;
-    top:38%;
-    left:47%;
-    z-index:0;
-    animation:JM 3s step-end 3s infinite; 
-    -webkit-animation:JM 3s step-end 3s infinite;    
+  cursor: pointer;
+  width: 170px;
+  position: absolute;
+  top: 38%;
+  left: 47%;
+  z-index: 0;
+  animation: JM 3s step-end 3s infinite;
+  -webkit-animation: JM 3s step-end 3s infinite;
 }
 
 /* Monument */
 #monument {
-    cursor:pointer;
+  cursor: pointer;
 }
 
 /* USA Flags */
 [id*="flag"] {
-    width:60px;
+  width: 60px;
 }
 
 [id*="flag"]:hover {
-    filter: sepia(100%);
+  -webkit-filter: sepia(100%);
+  filter: sepia(100%);
 }
 
 #flag1 {
-    position:absolute;
-    top:49%;
-    right:43%;
-    bottom:0;
-    cursor: pointer;
-    z-index:4;
+  position: absolute;
+  top: 49%;
+  right: 43%;
+  bottom: 0;
+  cursor: pointer;
+  z-index: 4;
 }
 
 #flag1 .tooltip_flag1 {
-    width:100px;
-    background-color:#FFF;
-    color:#333;
-    text-align: center;
-    border-radius:50%;
-    padding:20px 0px;
-    position:absolute;
-    z-index:1;
-    bottom:100%;
-    left:50%;
-    margin-left:-60px;
-    opacity:0;
-    transition:opacity 0.3s;
+  width: 100px;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  border-radius: 50%;
+  padding: 20px 0px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 #flag1 .tooltip_flag1::after {
-    content:"";
-    position:absolute;
-    top:100%;
-    left:50%;
-    margin-left:-5px;
-    border-width:5px;
-    border-style:solid;
-    border-color:#fff transparent transparent transparent;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
 }
 
 #flag1:hover .tooltip_flag1 {
-    opacity:1;
+  opacity: 1;
 }
 
-
 #flag2 {
-    position:absolute;
-    top:59%;
-    right:42%;
-    bottom:0;
-    cursor: pointer;
-    z-index:4;
+  position: absolute;
+  top: 59%;
+  right: 42%;
+  bottom: 0;
+  cursor: pointer;
+  z-index: 4;
 }
 
 #flag2 .tooltip_flag2 {
-    width:100px;
-    background-color:#FFF;
-    color:#333;
-    text-align: center;
-    border-radius:50%;
-    padding:20px 0px;
-    position:absolute;
-    z-index:1;
-    bottom:100%;
-    left:50%;
-    margin-left:-60px;
-    opacity:0;
-    transition:opacity 0.3s;
+  width: 100px;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  border-radius: 50%;
+  padding: 20px 0px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 #flag2 .tooltip_flag2::after {
-    content:"";
-    position:absolute;
-    top:100%;
-    left:50%;
-    margin-left:-5px;
-    border-width:5px;
-    border-style:solid;
-    border-color:#fff transparent transparent transparent;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
 }
 
 #flag2:hover .tooltip_flag2 {
-    opacity:1;
+  opacity: 1;
 }
 
 #flag3 {
-    position:absolute;
-    top:60%;
-    right:36%;
-    bottom:0;
-    cursor: pointer;
-    z-index:4;
+  position: absolute;
+  top: 60%;
+  right: 36%;
+  bottom: 0;
+  cursor: pointer;
+  z-index: 4;
 }
 
 #flag3 .tooltip_flag3 {
-    width:120px;
-    background-color:#FFF;
-    color:#333;
-    text-align: center;
-    border-radius:50%;
-    padding:20px 0px;
-    position:absolute;
-    z-index:1;
-    bottom:100%;
-    left:50%;
-    margin-left:-60px;
-    opacity:0;
-    transition:opacity 0.3s;
+  width: 120px;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  border-radius: 50%;
+  padding: 20px 0px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 #flag3 .tooltip_flag3::after {
-    content:"";
-    position:absolute;
-    top:100%;
-    left:50%;
-    margin-left:-5px;
-    border-width:5px;
-    border-style:solid;
-    border-color:#fff transparent transparent transparent;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
 }
 
 #flag3:hover .tooltip_flag3 {
-    opacity:1;
+  opacity: 1;
 }
-
 
 #flag4 {
-    position:absolute;
-    top:55%;
-    right:30%;
-    bottom:0;
-    cursor: pointer;
-    z-index:4;
+  position: absolute;
+  top: 55%;
+  right: 30%;
+  bottom: 0;
+  cursor: pointer;
+  z-index: 4;
 }
 #flag4 .tooltip_flag4 {
-    width:120px;
-    background-color:#FFF;
-    color:#333;
-    text-align: center;
-    border-radius:50%;
-    padding:20px 0px;
-    position:absolute;
-    z-index:1;
-    bottom:100%;
-    left:50%;
-    margin-left:-60px;
-    opacity:0;
-    transition:opacity 0.3s;
+  width: 120px;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  border-radius: 50%;
+  padding: 20px 0px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 #flag4 .tooltip_flag4::after {
-    content:"";
-    position:absolute;
-    top:100%;
-    left:50%;
-    margin-left:-5px;
-    border-width:5px;
-    border-style:solid;
-    border-color:#fff transparent transparent transparent;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
 }
 
 #flag4:hover .tooltip_flag4 {
-    opacity:1;
+  opacity: 1;
 }
 
-
 #flag5 {
-    position:absolute;
-    top:48%;
-    left:70%;
-    bottom:0;
-    cursor: pointer;
-    z-index: 2;
+  position: absolute;
+  top: 48%;
+  left: 70%;
+  bottom: 0;
+  cursor: pointer;
+  z-index: 2;
 }
 
 #flag5 .tooltip_flag5 {
-    width:120px;
-    background-color:#FFF;
-    color:#333;
-    text-align: center;
-    border-radius:50%;
-    padding:20px 0px;
-    position:absolute;
-    z-index:1;
-    bottom:100%;
-    left:50%;
-    margin-left:-60px;
-    opacity:0;
-    transition:opacity 0.3s;
+  width: 120px;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  border-radius: 50%;
+  padding: 20px 0px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 #flag5 .tooltip_flag5::after {
-    content:"";
-    position:absolute;
-    top:100%;
-    left:50%;
-    margin-left:-5px;
-    border-width:5px;
-    border-style:solid;
-    border-color:#fff transparent transparent transparent;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
 }
 
 #flag5:hover .tooltip_flag5 {
-    opacity:1;
+  opacity: 1;
 }
 
 /* Malia Obama */
 #malia {
-    width:270px;
-    position:absolute;
-    top:45%;
-    right:10%;
-    z-index:1;
-    cursor: pointer;
+  width: 270px;
+  position: absolute;
+  top: 45%;
+  right: 10%;
+  z-index: 1;
+  cursor: pointer;
 }
 
 /* British Sign Board*/
 #british {
-    width:150px;
-    position:absolute;
-    top:45%;
-    left:88%;
-    z-index: 2;
-    cursor: pointer;
+  width: 150px;
+  position: absolute;
+  top: 45%;
+  left: 88%;
+  z-index: 2;
+  cursor: pointer;
 }
 
 /* Hotdog */
 #hotdog {
-    width:200px;
-    position:absolute;
-    top:60%;
-    left:25%;
-    z-index:3;
-    cursor: pointer;
+  width: 200px;
+  position: absolute;
+  top: 60%;
+  left: 25%;
+  z-index: 3;
+  cursor: pointer;
 }
 
 #wrapper {
-    width:210px;
-    position:absolute;
-    top:58%;
-    left:25%;
-    z-index:2;
+  width: 210px;
+  position: absolute;
+  top: 58%;
+  left: 25%;
+  z-index: 2;
 }
 
 /* Besty Ross */
 #betsy {
-    width:155px;
-    height:200px;
-    position:absolute;
-    top:65%;
-    right:10%;
-    z-index:3;
-    cursor: pointer;   
-    background-image:url(SVG/BESTYROSS.svg);
-    background-repeat: no-repeat;
-    background-size:1180px 200px;
-    animation: flag 0.9s steps(8) infinite;
-    transform:scale(1.5);
+  width: 155px;
+  height: 200px;
+  position: absolute;
+  top: 65%;
+  right: 10%;
+  z-index: 3;
+  cursor: pointer;
+  background-image: url(SVG/BESTYROSS.svg);
+  background-repeat: no-repeat;
+  background-size: 1180px 200px;
+  -webkit-animation: flag 0.9s steps(8) infinite;
+  animation: flag 0.9s steps(8) infinite;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+@-webkit-keyframes flag {
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -1165px;
+  }
 }
 
 @keyframes flag {
-    from {
-     background-position:0px;   
-    }
-    to {
-     background-position:-1165px;
-    }
+  from {
+    background-position: 0px;
+  }
+  to {
+    background-position: -1165px;
+  }
 }
 
 /* Calendar */
 #calendar {
-    width:170px;
-    position:absolute;
-    top:85%;
-    right:80%;
-    z-index: 2;
-    cursor: pointer;    
+  width: 170px;
+  position: absolute;
+  top: 85%;
+  right: 80%;
+  z-index: 2;
+  cursor: pointer;
 }
 
 /* Fact Scroll box */
 #scroll {
-    width:620px;
-    height:200px;
-    position:absolute;
-    margin:auto;
-    top:73%;
-    left:0;
-    right:0;
-    bottom:0;
-    z-index:3;
-    pointer-events: none; /* Creates a transparent wall that elements behind can be seen through */
+  width: 620px;
+  height: 200px;
+  position: absolute;
+  margin: auto;
+  top: 73%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  pointer-events: none; /* Creates a transparent wall that elements behind can be seen through */
 }
 
 #factbox {
-    max-width:480px;
-    position:absolute;
-    margin:auto;
-    left:0;
-    right:0;
-    bottom:100px;
-    padding:10px;
-    z-index:6;
-    text-align: center;
-    text-shadow: 1px 2px 3px rgba(255,100,0,0.3);
-    font-family: 'Philosopher', sans-serif;
-    font-weight: bold;
-    font-size:1.5em;
-    opacity: 0;
-    transition:0.5s;
-    transition-delay:2s;
+  max-width: 480px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 100px;
+  padding: 10px;
+  z-index: 6;
+  text-align: center;
+  text-shadow: 1px 2px 3px rgba(255, 100, 0, 0.3);
+  font-family: "Philosopher", sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-delay: 2s;
+  -o-transition-delay: 2s;
+  transition-delay: 2s;
 }
